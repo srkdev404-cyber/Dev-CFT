@@ -1,0 +1,9 @@
+[
+  {
+    "ResourceType": "AWS::ECS::Cluster",
+    "LogicalResourceId": "MyCluster",
+    "ResourceIdentifier": {
+      "ClusterName": "my-cluster"
+    }
+  }
+]
