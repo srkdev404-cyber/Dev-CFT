@@ -1,0 +1,4 @@
+"TargetGroupArn": "...",
+"Port": 80,
+"Protocol": "HTTP",
+"VpcId": "vpc-xxxx"
