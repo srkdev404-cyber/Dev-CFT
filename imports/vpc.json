@@ -1,0 +1,9 @@
+[
+  {
+    "ResourceType": "AWS::EC2::VPC",
+    "LogicalResourceId": "MyVPC",
+    "ResourceIdentifier": {
+      "VpcId": "vpc-xxxx"
+    }
+  }
+]
