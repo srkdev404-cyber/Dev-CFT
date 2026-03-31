@@ -1,0 +1,9 @@
+[
+  {
+    "ResourceType": "AWS::Route53::HostedZone",
+    "LogicalResourceId": "MyHostedZone",
+    "ResourceIdentifier": {
+      "Id": "Z123456ABC"
+    }
+  }
+]
