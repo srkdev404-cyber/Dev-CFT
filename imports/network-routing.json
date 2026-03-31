@@ -1,0 +1,16 @@
+[
+  {
+    "ResourceType": "AWS::EC2::InternetGateway",
+    "LogicalResourceId": "MyIGW",
+    "ResourceIdentifier": {
+      "InternetGatewayId": "igw-xxxx"
+    }
+  },
+  {
+    "ResourceType": "AWS::EC2::RouteTable",
+    "LogicalResourceId": "PublicRouteTable",
+    "ResourceIdentifier": {
+      "RouteTableId": "rtb-xxxx"
+    }
+  }
+]
