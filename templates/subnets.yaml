@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Resources:
+  PublicSubnet1:
+    Type: AWS::EC2::Subnet
+    DeletionPolicy: Retain
+    Properties:
+      VpcId: <your-vpc-id>
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: ap-south-1a
+
+  PublicSubnet2:
+    Type: AWS::EC2::Subnet
+    DeletionPolicy: Retain
+    Properties:
+      VpcId: <your-vpc-id>
+      CidrBlock: 10.0.2.0/24
+      AvailabilityZone: ap-south-1b
