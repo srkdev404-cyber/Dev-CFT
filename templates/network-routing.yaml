@@ -1,0 +1,28 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Resources:
+
+  MyIGW:
+    Type: AWS::EC2::InternetGateway
+    DeletionPolicy: Retain
+
+  AttachIGW:
+    Type: AWS::EC2::VPCGatewayAttachment
+    DeletionPolicy: Retain
+    Properties:
+      VpcId: <your-vpc-id>
+      InternetGatewayId: igw-xxxx
+
+  PublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    DeletionPolicy: Retain
+    Properties:
+      VpcId: <your-vpc-id>
+
+  DefaultRoute:
+    Type: AWS::EC2::Route
+    DeletionPolicy: Retain
+    Properties:
+      RouteTableId: rtb-xxxx
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: igw-xxxx
