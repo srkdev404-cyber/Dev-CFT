@@ -1,0 +1,17 @@
+Resources:
+
+  MyTaskDef:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: my-task
+      Cpu: 256
+      Memory: 512
+      NetworkMode: awsvpc
+      RequiresCompatibilities:
+        - FARGATE
+
+      ContainerDefinitions:
+        - Name: app
+          Image: repo/image:tag
+          PortMappings:
+            - ContainerPort: 80
