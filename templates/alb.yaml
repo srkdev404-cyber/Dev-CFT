@@ -1,0 +1,36 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Resources:
+
+  MyALB:
+    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+    DeletionPolicy: Retain
+    Properties:
+      Name: my-alb
+      Scheme: internet-facing
+      Type: application
+      Subnets:
+        - subnet-xxxx
+        - subnet-yyyy
+      SecurityGroups:
+        - sg-xxxx
+
+  MyTargetGroup:
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    DeletionPolicy: Retain
+    Properties:
+      Port: 80
+      Protocol: HTTP
+      VpcId: vpc-xxxx
+      TargetType: instance
+
+  MyListener:
+    Type: AWS::ElasticLoadBalancingV2::Listener
+    DeletionPolicy: Retain
+    Properties:
+      LoadBalancerArn: arn:aws:elasticloadbalancing:...
+      Port: 80
+      Protocol: HTTP
+      DefaultActions:
+        - Type: forward
+          TargetGroupArn: arn:aws:elasticloadbalancing:...
