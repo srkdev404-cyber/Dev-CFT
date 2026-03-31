@@ -1,0 +1,16 @@
+[
+  {
+    "ResourceType": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+    "LogicalResourceId": "MyALB",
+    "ResourceIdentifier": {
+      "LoadBalancerArn": "arn:aws:elasticloadbalancing:..."
+    }
+  },
+  {
+    "ResourceType": "AWS::ElasticLoadBalancingV2::TargetGroup",
+    "LogicalResourceId": "MyTargetGroup",
+    "ResourceIdentifier": {
+      "TargetGroupArn": "arn:aws:elasticloadbalancing:..."
+    }
+  }
+]
