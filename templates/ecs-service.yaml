@@ -1,0 +1,22 @@
+Resources:
+
+  MyService:
+    Type: AWS::ECS::Service
+    Properties:
+      Cluster: my-cluster
+      DesiredCount: 1
+      LaunchType: FARGATE
+
+      TaskDefinition: !Ref MyTaskDef
+
+      NetworkConfiguration:
+        AwsvpcConfiguration:
+          Subnets:
+            - subnet-xxxx
+          SecurityGroups:
+            - sg-xxxx
+
+      LoadBalancers:
+        - ContainerName: app
+          ContainerPort: 80
+          TargetGroupArn: arn:aws:elasticloadbalancing:...
