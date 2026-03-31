@@ -1,0 +1,9 @@
+[
+  {
+    "ResourceType": "AWS::EC2::SecurityGroup",
+    "LogicalResourceId": "WebSG",
+    "ResourceIdentifier": {
+      "GroupId": "sg-xxxx"
+    }
+  }
+]
