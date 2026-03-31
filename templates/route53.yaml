@@ -1,0 +1,29 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Resources:
+
+  MyHostedZone:
+    Type: AWS::Route53::HostedZone
+    DeletionPolicy: Retain
+    Properties:
+      Name: example.com
+
+  ApiRecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: Z123456ABC
+      Name: api.example.com
+      Type: A
+      AliasTarget:
+        DNSName: my-alb.amazonaws.com
+        HostedZoneId: ZXXXXXXXX   # ALB hosted zone id
+
+  WWWRecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: Z123456ABC
+      Name: www.example.com
+      Type: CNAME
+      TTL: 300
+      ResourceRecords:
+        - example.com
