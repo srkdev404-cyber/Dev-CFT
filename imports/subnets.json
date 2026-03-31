@@ -1,0 +1,16 @@
+[
+  {
+    "ResourceType": "AWS::EC2::Subnet",
+    "LogicalResourceId": "PublicSubnet1",
+    "ResourceIdentifier": {
+      "SubnetId": "subnet-1111"
+    }
+  },
+  {
+    "ResourceType": "AWS::EC2::Subnet",
+    "LogicalResourceId": "PublicSubnet2",
+    "ResourceIdentifier": {
+      "SubnetId": "subnet-2222"
+    }
+  }
+]
