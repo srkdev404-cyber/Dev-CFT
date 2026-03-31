@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Resources:
+
+  MyEC2:
+    Type: AWS::EC2::Instance
+    DeletionPolicy: Retain
+    Properties:
+      ImageId: ami-xxxx
+      InstanceType: t3.micro
+
+      SubnetId: subnet-xxxx
+
+      SecurityGroupIds:
+        - sg-xxxx
+
+      KeyName: my-key
+
+      IamInstanceProfile: role-name   # if exists
+
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeSize: 8
+            VolumeType: gp2
