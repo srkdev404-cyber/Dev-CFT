@@ -1,0 +1,8 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Resources:
+
+  MyCluster:
+    Type: AWS::ECS::Cluster
+    Properties:
+      ClusterName: my-cluster
